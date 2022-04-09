@@ -4,155 +4,55 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ^!Space::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {Space}
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, {Space}
-        }
-    }
+    keypress("{Space}")
     return
 
 ^!Left::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {Left}
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, {Left}
-        }
-    }
+    keypress("{Left}")
     return
 
 ^!Right::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {Right}
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, {Right}
-        }
-    }
+    keypress("{Right}")
     return
 
 ^!Up::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {Up}
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, {Up}
-        }
-    }
+    keypress("{Up}")
     return
 
 ^!Down::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {Down}
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, {Down}
-        }
-    }
+    keypress("{Down}")
     return
 
 ^!Enter::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {Enter}
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, {Enter}
-        }
-    }
+    keypress("{Enter}")
     return
 
 ^!f::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
-    { 
-        IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
-        { 
-            WinGetActiveTitle, sActiveWindow
-            WinActivate, ahk_class Qt5152QWindowOwnDCIcon
-            WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, f
-            Sleep, 100
-            WinActivate, %sActiveWindow%
-        }
-        else 
-        {
-            SendInput, f
-        }
-    }
+    keypress("{f}")
     return
 
 ^!Backspace::
-    ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
+    keypress("{Backspace}")
+    return
+
+^!End::
+    Suspend
+    return
+
+keypress(key)
+{
+     ifWinExist, ahk_class Qt5152QWindowOwnDCIcon
     { 
         IfWinNotActive, ahk_class Qt5152QWindowOwnDCIcon
         { 
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            SendInput, {BackSpace}
+            SendInput, %key%
             Sleep, 100
             WinActivate, %sActiveWindow%
         }
-        else 
-        {
-            SendInput, {BackSpace}
-        }
+        else
+            SendInput, %key%
     }
-    return
-
-^!End::Suspend
+}
