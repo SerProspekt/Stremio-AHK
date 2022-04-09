@@ -11,7 +11,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {Space}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {Space}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -20,10 +19,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, {Space}
         }
-    }
-    else 
-    {
-        SendInput, 5
     }
     return
 
@@ -35,7 +30,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {Left}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {Left}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -44,10 +38,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, {Left}
         }
-    }
-    else 
-    {
-        SendInput, 4
     }
     return
 
@@ -59,7 +49,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {Right}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {Right}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -68,10 +57,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, {Right}
         }
-    }
-    else 
-    {
-        SendInput, 6
     }
     return
 
@@ -83,7 +68,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {Up}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {Up}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -92,10 +76,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, {Up}
         }
-    }
-    else 
-    {
-        SendInput, 8
     }
     return
 
@@ -107,7 +87,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {Down}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {Down}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -116,10 +95,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, {Down}
         }
-    }
-    else 
-    {
-        SendInput, 2
     }
     return
 
@@ -131,7 +106,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {Enter}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {Enter}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -140,10 +114,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, {Enter}
         }
-    }
-    else 
-    {
-        SendInput, {Enter}
     }
     return
 
@@ -155,7 +125,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, f, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, f
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -164,10 +133,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         {
             SendInput, f
         }
-    }
-    else 
-    {
-        SendInput, f
     }
     return
 
@@ -179,7 +144,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             WinGetActiveTitle, sActiveWindow
             WinActivate, ahk_class Qt5152QWindowOwnDCIcon
             WinWaitActive, ahk_class Qt5152QWindowOwnDCIcon
-            ;ControlSend, ahk_parent, {BackSpace}, ahk_class Qt5152QWindowOwnDCIcon
             SendInput, {BackSpace}
             Sleep, 100
             WinActivate, %sActiveWindow%
@@ -189,10 +153,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             SendInput, {BackSpace}
         }
     }
-    else 
-    {
-        SendInput, {BackSpace}
-    }
     return
 
-^NumpadEnter::Suspend
+^!End::Suspend
